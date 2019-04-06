@@ -1,4 +1,4 @@
-package ru.sbr.javaschool;
+package ru.sbt.javaschool.interfaces;
 
 public interface ThreadPool {
 

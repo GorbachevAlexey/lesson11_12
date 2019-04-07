@@ -11,6 +11,7 @@ public class FixedThreadPool implements ThreadPool {
     private Queue<Runnable> queue = new LinkedList<>();
     MyThread[] thread;
 
+
     public FixedThreadPool(int countThread) {
         this.countThread = countThread;
         thread = new MyThread[countThread];
@@ -32,19 +33,13 @@ public class FixedThreadPool implements ThreadPool {
         }
     }
 
-    public void stop() {
 
-        for (int i = 0; i < countThread; i++) {
-            thread[i].interrupt();
-        }
-    }
 
     private class MyThread extends Thread {
         @Override
         public void run() {
             Runnable runnable;
             while (!Thread.interrupted()) {
-                while (true) {
                     synchronized (queue) {
                         while (queue.isEmpty()) {
                             System.err.println(this.getName() + " waiting!");
@@ -58,7 +53,6 @@ public class FixedThreadPool implements ThreadPool {
                         runnable = queue.remove();
                     }
                     runnable.run();
-                }
             }
         }
     }

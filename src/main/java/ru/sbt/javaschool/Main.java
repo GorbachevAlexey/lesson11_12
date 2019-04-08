@@ -30,8 +30,9 @@ public class Main {
             TimeUnit.SECONDS.sleep(5);
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }*/
+        }
 
+        fixedThreadPool.stop();*/
 //-----------------------------------------------------------------------
 
 //-----------------------------------------------------------------------
@@ -67,6 +68,7 @@ public class Main {
             e.printStackTrace();
         }
 
+        scalableThreadPool.stop();
 //-----------------------------------------------------------------------
     }
 }

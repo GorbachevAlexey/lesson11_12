@@ -7,7 +7,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Main {
     static final int MIN_COUNT_THREAD = 10;
-    static final int MAX_COUNT_THREAD = 12;
+    static final int MAX_COUNT_THREAD = 15;
 
     public static void main(String[] args) {
 //-----------------------------------------------------------------------
@@ -68,7 +68,7 @@ public class Main {
             e.printStackTrace();
         }
 
-        scalableThreadPool.stop();
+       // scalableThreadPool.stop();
 //-----------------------------------------------------------------------
     }
 }

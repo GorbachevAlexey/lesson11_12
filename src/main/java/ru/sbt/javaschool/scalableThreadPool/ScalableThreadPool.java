@@ -43,6 +43,25 @@ public class ScalableThreadPool implements ThreadPool {
         }
     }
 
+    /*public void stop() {
+        while (true) {
+            boolean allWaitThread = true;
+            for (MyThread myThread : thread) {
+                if (myThread.getState() != Thread.State.WAITING)
+                    allWaitThread = false;
+            }
+            if (!allWaitThread) {
+                interruptThreads();
+                break;
+            }
+        }
+    }
+
+    private void interruptThreads() {
+        for (MyThread myThread : thread) {
+            myThread.interrupt();
+        }
+    }*/
 
     private void checkAddThread() {
         //если потоков меньше, чем макисмально разрешенных и задач больше чем доступных потоков,
